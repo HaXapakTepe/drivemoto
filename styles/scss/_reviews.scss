@@ -1,0 +1,144 @@
+.reviews {
+  &__wrapper {
+    @include fluid(margin-top, 50px, 100px);
+    @include fluid(margin-bottom, 50px, 180px);
+  }
+
+  &__title {
+    @include fluid(margin-bottom, 16px, 24px);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include fluid(gap, 20px, 32px);
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      @include fluid(gap, 20px, 56px);
+    }
+
+    &--alt {
+      display: grid;
+      grid-template-columns: 1fr 283px;
+      @include fluid(gap, 20px, 56px);
+
+
+      .reviews {
+        &__item {
+          padding: 0;
+          @include fluid(padding-bottom, 20px, 32px);
+          border-radius: unset;
+          border: none;
+          border-bottom: 1px solid #C2C2C2;
+
+          &-text {
+            -webkit-line-clamp: unset;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    @include fluid(gap, 16px, 24px);
+    @include fluid(padding, 20px, 32px);
+    border: 1px solid #C2C2C2;
+    border-radius: 10px;
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &-title {
+      font-weight: 500;
+      @include fluid(font-size, 16px, 20px);
+    }
+
+    &-block {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &-time {
+      color: #828282;
+    }
+
+    &-icon {
+      @include fluid(width, 20px, 24px);
+      @include fluid(height, 20px, 24px);
+    }
+
+    &-content {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      @include fluid(gap, 12px, 16px);
+    }
+
+    &-quotes {
+      width: 16px;
+      height: 16px;
+    }
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: #4F4F4F;
+    }
+
+    &-accordion {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      color: #3C3C3C;
+      cursor: pointer;
+
+      &.accordionAlt--active {
+        .reviews__item-arrow {
+          transform: rotateX(-180deg)
+        }
+      }
+    }
+
+    &-hidden {
+      @include fluid(min-height, 81px, 90px);
+    }
+
+    &-arrow {
+      display: flex;
+      align-items: center;
+      transition: transform .23s ease-in-out;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .reviews {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+}

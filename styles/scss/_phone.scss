@@ -1,0 +1,36 @@
+.phone {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__link {
+    color: #2B2B28;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: color .23s ease-in-out;
+
+    &:hover {
+      color: #FAB700;
+    }
+  }
+
+  &__call {
+    font-family: "Exo";
+    font-size: 12px;
+    color: #FAB700;
+    cursor: pointer;
+  }
+
+  &--footer {
+    .phone {
+      &__link {
+        font-weight: 400;
+        color: #fff;
+
+        &:hover {
+          color: #FAB700;
+        }
+      }
+    }
+  }
+}

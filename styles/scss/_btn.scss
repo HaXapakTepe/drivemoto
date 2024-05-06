@@ -1,0 +1,80 @@
+.btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  gap: 8px;
+  @include fluid(padding-left, 20px, 32px);
+  @include fluid(padding-right, 20px, 32px);
+  @include fluid(padding-top, 10px, 12px);
+  @include fluid(padding-bottom, 10px, 12px);
+  @include fluid(font-size, 14px, 16px);
+  white-space: nowrap;
+  color: #2B2B28;
+  background-color: #FAB700;
+  border-radius: 30px;
+  border: 1px solid #FAB700;
+  transition: background-color 0.23s ease-in-out, border-color 0.23s ease-in;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #fff;
+    border-color: #FAB700;
+  }
+
+  &__icon {
+    @include fluid(width, 20px, 24px);
+    @include fluid(height, 20px, 24px);
+  }
+
+  &--white {
+    &:hover {
+      background-color: #fff;
+      border-color: #fff;
+    }
+  }
+
+  &--more {
+    width: 100%;
+    background-color: #fff;
+    justify-content: center;
+    @include fluid(margin-top, 24px, 48px);
+    @include fluid(margin-bottom, 16px, 24px);
+
+    &:hover {
+      background-color: #FAB700;
+      border-color: #FAB700;
+      color: #2B2B28;
+    }
+  }
+
+  &--width {
+    width: 100%;
+    justify-content: center;
+  }
+
+  &--alt {
+    @include fluid(padding-left, 12px, 16px);
+    @include fluid(padding-right, 12px, 16px);
+    @include fluid(padding-top, 6px, 8px);
+    @include fluid(padding-bottom, 6px, 8px);
+    background-color: #fff;
+
+    &:hover {
+      background-color: #FAB700;
+      border-color: #FAB700;
+      color: #2B2B28;
+    }
+  }
+
+  &--card {
+    @include fluid(padding-left, 12px, 16px);
+    @include fluid(padding-right, 12px, 16px);
+    @include fluid(padding-top, 6px, 8px);
+    @include fluid(padding-bottom, 6px, 8px);
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}

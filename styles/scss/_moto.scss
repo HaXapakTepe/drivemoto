@@ -1,0 +1,81 @@
+.moto {
+  &__wrapper {
+    @include fluid(margin-top, 50px, 100px);
+    @include fluid(margin-bottom, 50px, 100px);
+  }
+
+  &__title {
+    @include fluid(margin-bottom, 16px, 24px);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 310px 1fr;
+    @include fluid(gap, 20px, 32px);
+
+    &-elem {
+      display: flex;
+      flex-direction: column;
+      @include fluid(gap, 24px, 48px);
+    }
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      @include fluid(gap, 16px, 24px);
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    @include fluid(gap, 16px, 24px);
+
+    &-link {
+      display: block;
+      @include fluid(padding-top, 10px, 12px);
+      @include fluid(padding-bottom, 10px, 12px);
+      color: #2B2B28;
+      border-top: 1px solid #BDBDBD;
+      transition: color 0.23s ease-in-out;
+
+      &:last-child {
+        border-bottom: 1px solid #BDBDBD;
+      }
+
+      &:hover {
+        color: #FAB700;
+      }
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    justify-content: center;
+    @include fluid(gap, 20px, 32px);
+  }
+}
+
+@media(max-width: 992px) {
+  .moto {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .moto {
+    &__cards {
+      align-self: center;
+    }
+  }
+}

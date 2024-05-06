@@ -1,0 +1,11 @@
+.rating {
+  display: flex;
+  gap: 2px;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
+}

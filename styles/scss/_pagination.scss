@@ -1,0 +1,105 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include fluid(gap, 4px, 12px);
+  @include fluid(margin-top, 16px, 24px);
+
+  &__prev,
+  &__next {
+    display: flex;
+    align-items: center;
+    @include fluid(gap, 12px, 16px);
+
+    &-text {
+      color: #2B2B28;
+    }
+
+    &:hover {
+      .pagination__icon {
+        background-color: #FAB700;
+      }
+    }
+  }
+
+  &__prev {
+    margin-right: auto;
+  }
+
+  &__next {
+    margin-left: auto;
+  }
+
+  &__icon {
+    border-radius: 50%;
+    overflow: hidden;
+    @include fluid(width, 36px, 48px);
+    @include fluid(height, 36px, 48px);
+    transition: background-color .23s ease-in-out;
+  }
+
+  &__number {
+    position: relative;
+    @include fluid(padding-top, 8px, 16px);
+    @include fluid(padding-bottom, 8px, 16px);
+    @include fluid(padding-left, 15px, 18px);
+    @include fluid(padding-right, 15px, 18px);
+    font-weight: 500;
+    color: #6C6C6C;
+    z-index: 1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include fluid(width, 36px, 48px);
+      @include fluid(height, 36px, 48px);
+      border-radius: 50%;
+      background-color: transparent;
+      transition: background-color 0.23s ease-in-out;
+      z-index: -1;
+    }
+
+    &--active {
+      color: #2B2B28;
+
+      &::after {
+        background-color: #FAB700;
+      }
+    }
+
+    &--block {
+      display: block !important;
+    }
+
+    &:hover:not(.pagination__number--active) {
+      &::after {
+        background-color: #f2f2f2;
+      }
+    }
+
+    &:nth-child(n+6):not(:nth-last-child(-n+4)) {
+      display: none;
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .pagination {
+
+    &__prev,
+    &__next {
+      &-text {
+        display: none;
+      }
+    }
+
+    &__number {
+      &:nth-child(n+4):not(:nth-last-child(-n+3)) {
+        display: none;
+      }
+    }
+  }
+}

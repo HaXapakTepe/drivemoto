@@ -1,0 +1,32 @@
+.certificate {
+  &__wrapper {
+    @include fluid(margin-top, 50px, 108px);
+    @include fluid(margin-bottom, 50px, 100px);
+    overflow: hidden;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    @include fluid(margin-bottom, 16px, 24px);
+  }
+
+  &__slide {
+    &-img {
+      @include fluid(height, 300px, 450px);
+      border-radius: 10px;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+}
+
+@media(max-width:992px) {
+  .certificate {
+    &__swiper {
+      overflow: visible;
+    }
+  }
+}

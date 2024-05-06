@@ -1,0 +1,102 @@
+.about {
+  &__wrapper {
+    @include fluid(margin-top, 50px, 100px);
+    @include fluid(margin-bottom, 50px, 96px);
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    @include fluid(gap, 16px, 24px);
+    @include fluid(margin-bottom, 20px, 40px);
+
+    &-box {
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      @include fluid(gap, 20px, 147px);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    @include fluid(gap, 16px, 24px);
+  }
+
+  &__img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    @include fluid(height, 350px, 541px);
+    border-radius: 10px;
+  }
+
+  &__elem {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include fluid(gap, 20px, 32px);
+
+    &-item {
+      @include fluid(padding-top, 16px, 24px);
+      @include fluid(padding-bottom, 12px, 16px);
+      @include fluid(padding-left, 12px, 16px);
+      @include fluid(padding-right, 12px, 16px);
+      border-radius: 10px;
+      background-color: #F0F0F0;
+    }
+
+    &-img {
+      @include fluid(height, 60px, 72px);
+      @include fluid(margin-bottom, 16px, 24px);
+    }
+
+    &-title {
+      font-weight: 600;
+      @include fluid(font-size, 16px, 20px);
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    &-text {
+      font-family: "Exo";
+      font-size: 12px;
+      @include fluid(margin-bottom, 10px, 12px);
+      color: #4F4F4F;
+      text-align: center;
+      text-wrap: balance;
+    }
+  }
+
+  &__text {
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-wrap: balance;
+  }
+}
+
+@media(max-width:992px) {
+  .about {
+    &__inner {
+      &-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__img {
+      height: 350px;
+    }
+
+    &__elem {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media(max-width:576px) {
+  .about {
+    &__elem {
+      grid-template-columns: 1fr;
+    }
+  }
+}

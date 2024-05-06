@@ -1,0 +1,23 @@
+.cards {
+  &__wrapper {
+    @include fluid(margin-top, 50px, 100px);
+    @include fluid(margin-bottom, 50px, 100px);
+    overflow: hidden;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    @include fluid(margin-bottom, 16px, 24px);
+  }
+}
+
+@media(max-width:992px) {
+  .cards {
+    &__swiper {
+      overflow: visible;
+    }
+  }
+}

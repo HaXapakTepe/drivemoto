@@ -1,0 +1,21 @@
+.select {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &__icon {
+    @include fluid(width, 20px, 24px);
+    @include fluid(height, 20px, 24px);
+  }
+
+  &__text {
+    color: #828282;
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  &--sorting {
+    align-items: start;
+    flex-direction: column;
+  }
+}

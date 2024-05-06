@@ -1,0 +1,18 @@
+.requisites {
+  &__wrapper {
+    @include fluid(margin-top, 50px, 100px);
+    @include fluid(margin-bottom, 50px, 100px);
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    @include fluid(gap, 20px, 32px);
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      @include fluid(gap, 16px, 24px);
+    }
+  }
+}
