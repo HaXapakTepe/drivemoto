@@ -152,7 +152,6 @@ $(document).ready(function () {
 			e.preventDefault()
 			const content = acc.previousElementSibling
 			const reviewsItemText = content.firstElementChild
-			console.log(reviewsItemText)
 			if (acc.classList.contains('accordionAlt--active')) {
 				setTimeout(() => {
 					reviewsItemText.style.webkitLineClamp = '4'
