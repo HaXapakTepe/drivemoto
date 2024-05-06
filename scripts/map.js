@@ -31,7 +31,7 @@ if (document.querySelector('.map')) {
 					},
 					{
 						iconLayout: 'default#image',
-						iconImageHref: '../assets/images/icons/mappin.svg',
+						iconImageHref: '../../assets/images/icons/mappin.svg',
 						iconImageSize: [56, 73],
 					}
 				)
@@ -56,14 +56,14 @@ if (document.querySelector('.map')) {
 				'<div class="map-baloon"><p>г. Набережные Челны, Мензелинский тракт, 22/1 (1 этаж)</p></div>',
 				55.70671442813047,
 				52.391260497601,
-				'../assets/images/icons/mappin-accent.svg',
+				'../../assets/images/icons/mappin-accent.svg',
 				[56, 73], // Размер иконки для второй метки
 			],
 			[
 				'<div class="map-baloon"><p>г. Казань, пр-кт Победы,200</p></div>',
 				55.801611973104926,
 				49.21166816877036,
-				'../assets/images/icons/mappin.svg',
+				'../../assets/images/icons/mappin.svg',
 				[32, 38], // Размер иконки для первой метки
 			],
 		]
