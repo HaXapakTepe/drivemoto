@@ -3,6 +3,7 @@
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
+  align-items: center;
   gap: 8px;
   @include fluid(padding-left, 20px, 32px);
   @include fluid(padding-right, 20px, 32px);
@@ -75,6 +76,71 @@
 
     &:hover {
       background-color: #fff;
+    }
+  }
+
+  &--catalogOpen {
+    &:hover {
+      background-color: #FAB700;
+    }
+  }
+
+  &__burger {
+    display: flex;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: transparent;
+    z-index: 1;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &-line {
+      display: block;
+      width: 16px;
+      height: 2px;
+      border-radius: 3px;
+      background: #2B2B28;
+      transition: all .23s ease-in-out;
+
+      &::before,
+      &::after {
+        content: "";
+        width: 16px;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        background: #2B2B28;
+        border-radius: 3px;
+        transition: all .23s ease-in-out;
+      }
+
+      &::before {
+        transform: translateY(-5px)
+      }
+
+      &::after {
+        transform: translateY(5px)
+      }
+    }
+
+  }
+
+  &.btn--active {
+    .btn__burger-line {
+      width: 0;
+      background: transparent;
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
     }
   }
 }

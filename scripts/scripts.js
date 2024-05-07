@@ -1,5 +1,6 @@
 $(document).ready(function () {
 	const body = document.querySelector('body')
+	const header = document.querySelector('.header')
 	const burger = document.querySelector('.burger')
 	const close = document.querySelector('.menu__close')
 	const menu = document.querySelector('.menu')
@@ -7,9 +8,16 @@ $(document).ready(function () {
 	const accordion = document.querySelectorAll('.accordion')
 	const accordionAlt = document.querySelectorAll('.accordionAlt')
 	const accordionBot = document.querySelectorAll('.accordionBot')
+	const accordionMobile = document.querySelectorAll('.accordionMobile')
+	const accordionFooter = document.querySelectorAll('.accordionFooter')
+	const accordionFooterContents = document.querySelectorAll(
+		'.accordionFooter-content'
+	)
 	const videosSlide = document.querySelectorAll('.videos__slide')
 	const tabs = document.querySelectorAll('.tab__target')
 	const pages = document.querySelectorAll('.tab__info')
+	const btnCatalogOpen = document.querySelectorAll('.btn--catalogOpen')
+	const catalogModal = document.querySelector('.catalogModal')
 	const detailsInfoActionsIcon = document.querySelectorAll(
 		'.details__info-actions__icon'
 	)
@@ -24,7 +32,11 @@ $(document).ready(function () {
 	}
 
 	const clickOutsideMenu = event => {
-		if (!menu.contains(event.target) && !burger.contains(event.target)) {
+		if (
+			!menu.contains(event.target) &&
+			!burger.contains(event.target) &&
+			!header.contains(event.target)
+		) {
 			menu.classList.remove('menu--active')
 			burger.classList.remove('burger--active')
 			body.classList.remove('no-scroll')
@@ -44,6 +56,34 @@ $(document).ready(function () {
 	//     })
 	//   })
 	// }
+
+	btnCatalogOpen.forEach(btn => {
+		btn.addEventListener('click', () => {
+			btn.classList.toggle('btn--active')
+			catalogModal.classList.toggle('catalogModal--active')
+			body.classList.toggle('no-scroll')
+			menu.classList.remove('menu--active')
+		})
+	})
+
+	catalogModal?.addEventListener('click', e => {
+		if (catalogModal.classList.contains('catalogModal--active')) {
+			document.body.classList.add('no-scroll')
+		} else {
+			document.body.classList.remove('no-scroll')
+		}
+
+		if (
+			!e.target.closest('.catalogModal__inner') ||
+			e.target.closest('.catalogModal__close')
+		) {
+			catalogModal.classList.remove('catalogModal--active')
+			document.body.classList.remove('no-scroll')
+			btnCatalogOpen.forEach(btn => {
+				btn.classList.remove('btn--active')
+			})
+		}
+	})
 
 	detailsInfoActionsIcon?.forEach(icon => {
 		icon.addEventListener('click', function () {
@@ -117,6 +157,22 @@ $(document).ready(function () {
 		'tab__info--opacity'
 	)
 
+	accordionFooter?.forEach((acc, index) => {
+		acc.addEventListener('click', e => {
+			e.preventDefault()
+
+			const content = accordionFooterContents[index]
+
+			if (acc.classList.contains('accordionFooter--active')) {
+				acc.classList.remove('accordionFooter--active')
+				content.style.maxHeight = '0'
+			} else {
+				acc.classList.add('accordionFooter--active')
+				content.style.maxHeight = content.scrollHeight + 'px'
+			}
+		})
+	})
+
 	accordionBot?.forEach(acc => {
 		acc.addEventListener('click', e => {
 			e.preventDefault()
@@ -131,6 +187,22 @@ $(document).ready(function () {
 			}
 		})
 	})
+
+	if (innerWidth < 577) {
+		accordionMobile?.forEach(acc => {
+			acc.addEventListener('click', e => {
+				e.preventDefault()
+				const content = acc.querySelector('.accordionMobile__content')
+				if (acc.classList.contains('accordionMobile--active')) {
+					acc.classList.remove('accordionMobile--active')
+					content.style.maxHeight = '0'
+				} else {
+					acc.classList.add('accordionMobile--active')
+					content.style.maxHeight = content.scrollHeight + 'px'
+				}
+			})
+		})
+	}
 
 	accordion?.forEach(acc => {
 		acc.addEventListener('click', e => {

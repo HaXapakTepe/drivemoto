@@ -21,20 +21,17 @@
     @include fluid(row-gap, 20px, 50px);
     grid-column: 1/4;
 
-    &-elem,
     &-box {
       display: flex;
       flex-direction: column;
       @include fluid(gap, 10px, 12px);
     }
 
-    &-elem {
-      &:has(+*) {
-        @include fluid(margin-bottom, 8px, 28px);
-      }
-    }
-
     &-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
       @include fluid(margin-bottom, 2px, 4px);
       @include fluid(font-size, 16px, 20px);
       color: #fff;
@@ -49,6 +46,12 @@
       span {
         display: block;
         font-weight: 500;
+      }
+    }
+
+    &-mail {
+      &:has(+*) {
+        @include fluid(margin-bottom, 8px, 28px);
       }
     }
 
@@ -69,6 +72,29 @@
     &-link {
       font-weight: 500;
     }
+
+    &-arrow {
+      display: none;
+      width: 20px;
+      height: 20px;
+      transition: transform .23s ease-in-out;
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+      @include fluid(gap, 10px, 12px);
+
+      &:has(+*) {
+        @include fluid(margin-bottom, 20px, 40px);
+      }
+    }
+  }
+
+  .accordionMobile__content {
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
   }
 
   &__item {
@@ -76,7 +102,29 @@
     flex-direction: column;
     @include fluid(gap, 20px, 32px);
 
+    &-block {
+      display: flex;
+      flex-direction: column;
+      @include fluid(gap, 20px, 32px);
+    }
+
     &-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include fluid(font-size, 16px, 20px);
+      font-weight: 500;
+      color: #fff;
+    }
+
+    &-arrow {
+      display: none;
+      width: 20px;
+      height: 20px;
+      transition: transform .23s ease-in-out;
+    }
+
+    &-subtitle {
       font-weight: 600;
       color: #E4E2E1;
     }
@@ -89,7 +137,18 @@
   &__bot {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    @include fluid(gap, 15px, 30px);
+    @include fluid(column-gap, 20px, 32px);
+
+    .accordionFooter-content {
+      grid-column: 1/3;
+    }
+
+
+    .accordionFooter--active {
+      .footer__accordion-arrow {
+        transform: rotateX(-180deg);
+      }
+    }
   }
 
   &__accordion {
@@ -138,28 +197,49 @@
   }
 
   &__hidden {
-    margin-top: 20px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    @include fluid(min-height, 52px, 60px);
+    @include fluid(padding, 20px, 32px);
+    @include fluid(margin-top, 20px, 32px);
+    margin-top: 12px;
+    background-color: #4F4F4F;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &-item {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    &-link {
+      color: #fff;
+      font-weight: 600;
+      transition: color .23s ease-in-out;
+
+      &:hover {
+        color: #FAB700;
+      }
+    }
   }
 }
 
 @media(max-width: 992px) {
   .footer {
     &__inner {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr .8fr;
     }
 
     &__info {
-      grid-column: 1/3;
+      grid-column: unset;
       grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: dense;
 
       &-box {
         &:first-child {
-          order: -1;
-        }
-
-        &:last-child {
-          order: -1;
-          margin-top: 34px;
+          grid-area: 1/1/3/2;
         }
       }
     }
@@ -182,15 +262,107 @@
       grid-template-columns: 1fr;
     }
 
+    .accordionFooter-content {
+      grid-column: unset;
+
+      &:nth-child(3) {
+        order: 1;
+      }
+
+      &:last-child {
+        order: 3;
+      }
+    }
+
+    &__hidden {
+      margin-top: 0;
+    }
+
+    &__accordion {
+      transition: margin-bottom .23s ease-in-out;
+
+      &:first-child {
+        order: 0;
+        margin-bottom: 20px;
+      }
+
+      &:nth-child(2) {
+        order: 2;
+
+        &.accordionFooter--active {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
     &__info {
       grid-column: unset;
       grid-template-columns: 1fr;
 
       &-box {
-        &:last-child {
-          margin-top: unset;
+        &:first-child {
+          grid-column: unset;
         }
       }
+
+      &-box {
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        @include fluid(min-height, 52px, 60px);
+        @include fluid(padding-left, 16px, 24px);
+        @include fluid(padding-right, 16px, 24px);
+        @include fluid(padding-top, 12px, 16px);
+        @include fluid(padding-bottom, 12px, 16px);
+        background-color: #4F4F4F;
+        border-radius: 10px;
+        cursor: pointer;
+        gap: 0;
+
+      }
+
+      &-arrow {
+        display: block;
+      }
+
+      &-block {
+        margin-top: 10px;
+      }
+    }
+
+    &__item {
+      gap: 0;
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
+      height: fit-content;
+      @include fluid(min-height, 52px, 60px);
+      @include fluid(padding-left, 16px, 24px);
+      @include fluid(padding-right, 16px, 24px);
+      @include fluid(padding-top, 12px, 16px);
+      @include fluid(padding-bottom, 12px, 16px);
+      background-color: #4F4F4F;
+      border-radius: 10px;
+      cursor: pointer;
+
+      &-arrow {
+        display: block;
+      }
+
+      &-block {
+        margin-top: 10px;
+      }
+    }
+
+    .accordionMobile--active {
+
+      .footer__item-arrow,
+      .footer__info-arrow {
+        transform: rotateX(-180deg);
+      }
+    }
+
+    .accordionMobile__content {
+      max-height: 0;
     }
   }
 }

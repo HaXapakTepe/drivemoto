@@ -18,6 +18,11 @@
 
     &-icon {
       position: relative;
+
+      svg {
+        @include fluid(width, 20px, 24px);
+        @include fluid(height, 20px, 24px);
+      }
     }
 
     &-num {
@@ -48,6 +53,16 @@
     &-text {
       color: #6C6C6C;
       text-align: center;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .actions {
+    &__item {
+      &-text {
+        display: none;
+      }
     }
   }
 }

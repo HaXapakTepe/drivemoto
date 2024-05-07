@@ -13,3 +13,11 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .logo {
+    &__img {
+      height: 42px;
+    }
+  }
+}

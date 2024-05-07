@@ -31,7 +31,7 @@
     height: 16px;
     z-index: 5;
     cursor: pointer;
-    margin-left: auto;
+    margin-right: auto;
 
     &::before,
     &::after {
@@ -76,6 +76,7 @@
 
     &__list {
       flex-direction: column;
+      gap: 4px;
     }
 
     &--active {
@@ -92,9 +93,19 @@
     &__item {
       display: flex;
       align-items: center;
-      justify-content: center;
       padding: 10px 0px;
       width: 100%;
+
+      &--hidden {
+        display: block;
+
+        .btn {
+          padding-left: 0;
+          padding-right: 0;
+          background-color: transparent;
+          border-color: transparent;
+        }
+      }
     }
   }
 }
@@ -102,12 +113,6 @@
 @media (max-width: 576px) {
   .menu {
     width: 100%;
-
-    &__item {
-      &--hidden {
-        display: block;
-      }
-    }
 
     &__link {
       text-align: center;
