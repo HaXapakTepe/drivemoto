@@ -38,6 +38,12 @@
     flex-direction: column;
     @include fluid(gap, 16px, 24px);
 
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     &-link {
       display: block;
       @include fluid(padding-top, 10px, 12px);
@@ -54,6 +60,17 @@
         color: #FAB700;
       }
     }
+
+    &-icon {
+      display: none;
+      width: 20px;
+      height: 20px;
+      transition: transform .23s ease-in-out;
+    }
+
+    .accordionBot-content {
+      max-height: unset;
+    }
   }
 
   &__cards {
@@ -68,6 +85,28 @@
   .moto {
     &__inner {
       grid-template-columns: 1fr;
+    }
+
+    &__links {
+      border-bottom: 1px solid #BDBDBD;
+
+      &-title {
+        &.accordionBot--active {
+          .moto__links-icon {
+            transform: rotateX(-180deg);
+          }
+        }
+      }
+
+      &-icon {
+        display: block;
+      }
+
+      &-link {
+        &:last-child {
+          border: none;
+        }
+      }
     }
   }
 }

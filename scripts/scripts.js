@@ -4,7 +4,6 @@ $(document).ready(function () {
 	const burger = document.querySelector('.burger')
 	const close = document.querySelector('.menu__close')
 	const menu = document.querySelector('.menu')
-	const menuItem = document.querySelectorAll('.menu__item')
 	const accordion = document.querySelectorAll('.accordion')
 	const accordionAlt = document.querySelectorAll('.accordionAlt')
 	const accordionBot = document.querySelectorAll('.accordionBot')
@@ -46,16 +45,6 @@ $(document).ready(function () {
 	burger.addEventListener('click', toggleMenu)
 	close.addEventListener('click', toggleMenu)
 	document.addEventListener('click', clickOutsideMenu)
-
-	// if (burger) {
-	//   menuItem.forEach((item) => {
-	//     item.addEventListener('click', () => {
-	//       burger.classList.toggle('active')
-	//       menu.classList.remove('active')
-	//       body.classList.remove('no-scroll')
-	//     })
-	//   })
-	// }
 
 	btnCatalogOpen.forEach(btn => {
 		btn.addEventListener('click', () => {
@@ -145,6 +134,24 @@ $(document).ready(function () {
 	if (aboutInfo) {
 		observer.observe(aboutInfo)
 	}
+
+	$(window).scroll(function () {
+		if ($(window).scrollTop() >= 200) {
+			if (innerWidth > 993) {
+				$('body').css('padding-top', '66px')
+			} else if (innerWidth < 993 && innerWidth > 577) {
+				$('body').css('padding-top', '130px')
+			} else {
+				$('body').css('padding-top', '110px')
+			}
+			if (!$('.header__fixed').hasClass('header__fixed--active')) {
+				$('.header__fixed').hide().addClass('header__fixed--active').slideDown()
+			}
+		} else {
+			$('.header__fixed').removeClass('header__fixed--active')
+			$('body').css('padding-top', '')
+		}
+	})
 
 	Fancybox.bind('[data-fancybox]')
 
