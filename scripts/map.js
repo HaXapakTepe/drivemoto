@@ -210,7 +210,7 @@ if (document.querySelector('.map')) {
 
 		function init() {
 			var myMap = new ymaps.Map('map3', {
-				center: [55.75533190851993, 37.61782919835717],
+				center: [55.70671837681868, 52.39125842994889],
 				zoom: 16,
 			})
 
