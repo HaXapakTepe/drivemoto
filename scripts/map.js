@@ -191,8 +191,7 @@ if (document.querySelector('.map')) {
 					},
 					{
 						iconLayout: 'default#image',
-						// iconImageHref: '/drivemoto/assets/images/icons/mappin.svg',
-						iconImageHref: '../../assets/images/icons/mappin.svg',
+						iconImageHref: '/drivemoto/assets/images/icons/mappin.svg',
 						iconImageSize: [56, 73],
 					}
 				)
@@ -235,8 +234,7 @@ if (document.querySelector('.map')) {
 					},
 					{
 						iconLayout: 'default#image',
-						// iconImageHref: '/drivemoto/assets/images/icons/mappin.svg',
-						iconImageHref: '../../assets/images/icons/mappin.svg',
+						iconImageHref: '/drivemoto/assets/images/icons/mappin.svg',
 						iconImageSize: [56, 73],
 					}
 				)
@@ -279,8 +277,7 @@ if (document.querySelector('.map')) {
 					},
 					{
 						iconLayout: 'default#image',
-						// iconImageHref: '/drivemoto/assets/images/icons/mappin.svg',
-						iconImageHref: '../../assets/images/icons/mappin.svg',
+						iconImageHref: '/drivemoto/assets/images/icons/mappin.svg',
 						iconImageSize: [56, 73],
 					}
 				)
