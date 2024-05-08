@@ -87,6 +87,36 @@
       }
     }
   }
+
+  &--promo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 99%;
+    justify-content: space-between;
+    z-index: 11;
+    pointer-events: none;
+
+    .arrow {
+
+      &__prev,
+      &__next {
+        border-color: #BDBDBD;
+        background-color: rgba(255, 255, 255, 0.8);
+        pointer-events: auto;
+
+        &:hover {
+          background-color: #FAB700;
+          border-color: #FAB700;
+        }
+
+        &.swiper-button-disabled {
+          opacity: 0;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 992px) {

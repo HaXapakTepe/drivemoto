@@ -1,8 +1,39 @@
 .card {
+  position: relative;
+  z-index: 1;
+  max-width: 358px;
   display: flex;
   flex-direction: column;
   @include fluid(gap, 16px, 24px);
-  max-width: 310px;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: box-shadow .23s ease-in-out, padding .23s ease-in-out, transform .23s ease-in-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 106%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(52, 50, 41, .14);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .23s ease-in-out;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+
+    .card__swiper-pagination {
+      opacity: 1;
+    }
+  }
 
   &__top {
     position: relative;
@@ -73,6 +104,35 @@
   &__bot {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    @include fluid(gap, 4px, 12px);
+  }
+
+  &__swiper {
+    &-pagination {
+      opacity: 0;
+      transition: opacity 0.23s ease-in-out;
+    }
+
+    &.swiper {
+      .swiper {
+        &-pagination {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+          row-gap: 8px;
+
+          &-bullet {
+            width: unset;
+            height: 4px;
+            border-radius: 20px;
+            background-color: #E0E0E0;
+            transition: background-color .23s ease-in-out;
+
+            &-active {
+              background-color: #FAB700;
+            }
+          }
+        }
+      }
+    }
   }
 }

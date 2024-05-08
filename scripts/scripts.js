@@ -100,6 +100,52 @@ $(document).ready(function () {
 		})
 	})
 
+	function animateNumbers(numElement, endValue) {
+		let startValue = 0
+		let duration = 2000 // Длительность анимации в миллисекундах (10 секунд)
+		let startTime = null
+
+		function animateStep(currentTime) {
+			if (!startTime) startTime = currentTime
+			const elapsedTime = currentTime - startTime
+			const progress = elapsedTime / duration
+			const currentValue = Math.floor(
+				startValue + (endValue - startValue) * progress
+			)
+
+			if (progress >= 1) {
+				numElement.textContent = endValue.toLocaleString()
+			} else {
+				numElement.textContent = currentValue.toLocaleString()
+				requestAnimationFrame(animateStep)
+			}
+		}
+
+		requestAnimationFrame(animateStep)
+	}
+
+	function handleIntersection(entries, observer) {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				const numElements = entry.target.querySelectorAll('.about__info-num')
+				numElements.forEach(numElement => {
+					const endValue = parseInt(numElement.dataset.num.replace(/\s/g, ''))
+					animateNumbers(numElement, endValue)
+				})
+				observer.unobserve(entry.target)
+			}
+		})
+	}
+
+	const observer = new IntersectionObserver(handleIntersection, {
+		threshold: 0.8,
+	})
+
+	const aboutInfo = document.querySelector('.about__info')
+	if (aboutInfo) {
+		observer.observe(aboutInfo)
+	}
+
 	Fancybox.bind('[data-fancybox]')
 
 	$('.select__loca-box').select2({
@@ -157,18 +203,28 @@ $(document).ready(function () {
 		'tab__info--opacity'
 	)
 
-	accordionFooter?.forEach((acc, index) => {
+	accordionFooter.forEach((acc, index) => {
 		acc.addEventListener('click', e => {
 			e.preventDefault()
 
 			const content = accordionFooterContents[index]
+
+			accordionFooter.forEach((accordion, i) => {
+				if (
+					accordion.classList.contains('accordionFooter--active') &&
+					i !== index
+				) {
+					accordion.classList.remove('accordionFooter--active')
+					accordionFooterContents[i].style.maxHeight = '0'
+				}
+			})
 
 			if (acc.classList.contains('accordionFooter--active')) {
 				acc.classList.remove('accordionFooter--active')
 				content.style.maxHeight = '0'
 			} else {
 				acc.classList.add('accordionFooter--active')
-				content.style.maxHeight = content.scrollHeight + 'px'
+				content.style.maxHeight = `${content.scrollHeight}px`
 			}
 		})
 	})
@@ -334,7 +390,17 @@ $(document).ready(function () {
 		}
 		const mask = IMask(element, maskOptions)
 	}
-
+	if (document.querySelector('.promo__swiper')) {
+		var promoSwiper = new Swiper('.promo__swiper', {
+			loop: true,
+			slidesPerView: 1,
+			spaceBetween: 32,
+			navigation: {
+				nextEl: `.promo__arrow-next`,
+				prevEl: `.promo__arrow-prev`,
+			},
+		})
+	}
 	if (document.querySelector('.certificate__swiper')) {
 		var certificateSwiper = new Swiper('.certificate__swiper', {
 			slidesPerView: 4,
@@ -367,7 +433,6 @@ $(document).ready(function () {
 			},
 		})
 	}
-
 	if (document.querySelector('.videos__swiper')) {
 		var videosSwiper = new Swiper('.videos__swiper', {
 			slidesPerView: 4,
@@ -400,7 +465,6 @@ $(document).ready(function () {
 			},
 		})
 	}
-
 	if (document.querySelector('.details__swiper')) {
 		var swiperSmall = new Swiper('.details__swiperSmall', {
 			loop: true,
@@ -518,8 +582,8 @@ $(document).ready(function () {
 	}
 
 	const cardsSwipers = []
-	const cardSwiper = document.querySelectorAll('.cards__swiper')
-	cardSwiper?.forEach((swiper, index) => {
+	const cardsSwiper = document.querySelectorAll('.cards__swiper')
+	cardsSwiper?.forEach((swiper, index) => {
 		cardsSwipers.push(setCardsSwiper(index + 1))
 	})
 	function setCardsSwiper(index) {
@@ -529,13 +593,17 @@ $(document).ready(function () {
 				nextEl: `.cards__arrow-next--${index}`,
 			},
 			breakpoints: {
-				992: {
+				1440: {
 					slidesPerView: 4,
+					spaceBetween: 32,
+				},
+				992: {
+					slidesPerView: 3,
 					spaceBetween: 32,
 				},
 				768: {
 					slidesPerView: 2.5,
-					spaceBetween: 24,
+					spaceBetween: 20,
 				},
 				576: {
 					slidesPerView: 1.8,
@@ -549,6 +617,23 @@ $(document).ready(function () {
 					slidesPerView: 1.1,
 					spaceBetween: 12,
 				},
+			},
+		})
+	}
+
+	const cardSwipers = []
+	const cardSwiper = document.querySelectorAll('.card__swiper')
+	cardSwiper?.forEach((swiper, index) => {
+		cardSwipers.push(setCardSwiper(index + 1))
+	})
+	function setCardSwiper(index) {
+		return new Swiper(`.card__swiper--${index}`, {
+			loop: true,
+			slidesPerView: 1,
+			spaceBetween: 12,
+			nested: true,
+			pagination: {
+				el: `.card__swiper-pagination--${index}`,
 			},
 		})
 	}

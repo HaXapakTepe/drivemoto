@@ -1,0 +1,124 @@
+.promo {
+  &__wrapper {
+    @include fluid(margin-top, 24px, 32px);
+    @include fluid(margin-bottom, 50px, 100px);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 65% 33%;
+    @include fluid(gap, 20px, 32px);
+
+    &:has(+*) {
+      @include fluid(margin-bottom, 20px, 32px);
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 10px;
+  }
+
+  &__slide {
+    &-img {
+      @include fluid(height, 380px, 470px);
+      border-radius: 10px;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    @include fluid(gap, 20px, 30px);
+
+    &-img {
+      @include fluid(height, 180px, 220px);
+      border-radius: 10px;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    @include fluid(gap, 20px, 32px);
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include fluid(gap, 12px, 20px);
+      @include fluid(padding, 16px, 24px);
+      background-color: #F2F2F2;
+      border-radius: 10px;
+    }
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &-title {
+      font-weight: 500;
+      @include fluid(font-size, 16px, 20px);
+    }
+
+    &-text {
+      font-family: 'Exo';
+      font-size: 12px;
+      color: #4F4F4F;
+    }
+
+    &-icon {
+      @include fluid(width, 60px, 72px);
+      @include fluid(height, 60px, 72px);
+    }
+  }
+}
+
+@media(max-width: 1366px) {
+  .promo {
+    &__info {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .promo {
+    &__inner {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__item {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .promo {
+
+    &__item,
+    &__info {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      &-img {
+        height: 220px;
+      }
+    }
+  }
+}

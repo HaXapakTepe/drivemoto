@@ -31,41 +31,6 @@ img {
 	display: block;
 }
 
-// кастомная нумерация блоков
-// ol {
-//   counter-reset: num;
-//   list-style: decimal-leading-zero;
-
-//   li {
-//     &:before {
-//       content: counter(num, decimal-leading-zero);
-//       counter-increment: num;
-//       color: #FF7707;
-//       font-size: 40px;
-//       font-weight: 500;
-//       line-height: 120%;
-//       letter-spacing: -0.2px;
-//     }
-//   }
-// }
-
-// кол-во строк в блоке
-// * {
-//   display: -webkit-box;
-//   -webkit-line-clamp: 4;
-//   -webkit-box-orient: vertical;
-//   overflow: hidden;
-// }
-// обратиться к label в котором input
-// &:focus-within {
-//   border-color: #D9291D;
-// }
-
-// фокус лейблу родителю
-// &:focus-within {
-//   border-color: #d9291d;
-// }
-
 button {
 	background-color: transparent;
 }
@@ -104,7 +69,6 @@ body {
 }
 
 .wrapper {
-	// min-height: 100dvh;
 	min-width: 320px;
 	min-height: 100%;
 	display: flex;
@@ -116,7 +80,6 @@ body {
 }
 
 .container {
-	// контейнер + padding с двух сторон
 	@include fluid(width, 962px, 1366px);
 	@include container;
 }
@@ -133,23 +96,20 @@ body {
 	}
 }
 
-h1.title {
-	@include fluid(font-size, 28px, 48px);
-}
-
-h3.title {
-	@include fluid(font-size, 18px, 24px);
-}
-
-.title {
-	@include fluid(font-size, 24px, 40px);
-	font-weight: 500;
-	line-height: 1.2;
-}
-
 .fancybox__content {
 	img {
 		border-radius: 10px;
+	}
+}
+
+.fon {
+	background-color: #F2F2F2;
+
+	[class$='__wrapper'] {
+		margin-top: 24px;
+		@include fluid(padding-top, 50px, 100px);
+		@include fluid(padding-bottom, 50px, 100px);
+		margin: 0;
 	}
 }
 

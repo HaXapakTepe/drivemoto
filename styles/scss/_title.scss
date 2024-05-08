@@ -1,0 +1,21 @@
+h1.title {
+  @include fluid(font-size, 28px, 48px);
+}
+
+h3.title {
+  @include fluid(font-size, 18px, 24px);
+}
+
+.title {
+  @include fluid(font-size, 24px, 40px);
+  font-weight: 500;
+  line-height: 1.2;
+
+  &--white {
+    color: #fff;
+  }
+
+  &--big {
+    @include fluid(font-size, 28px, 48px);
+  }
+}

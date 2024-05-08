@@ -85,6 +85,16 @@
     }
   }
 
+  &--mra {
+    margin-right: auto;
+    margin-left: 16px;
+  }
+
+  &--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &__burger {
     display: flex;
     align-items: center;

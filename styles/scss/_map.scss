@@ -1,15 +1,20 @@
 .map {
   max-width: 880px;
   border-radius: 10px;
-  overflow: hidden;
 
   &__item {
     display: block;
     border-radius: 10px;
     @include fluid(height, 370px, 470px);
+    overflow: hidden;
 
     &--alt {
       @include fluid(height, 270px, 316px);
+    }
+
+    &--stores {
+      @include fluid(height, 220px, 280px);
+      border: 1px solid #BDBDBD;
     }
   }
 }

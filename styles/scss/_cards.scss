@@ -9,8 +9,47 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    @include fluid(margin-bottom, 16px, 24px);
+    flex-wrap: wrap;
+    gap: 16px;
+    @include fluid(margin-bottom, 20px, 32px);
+
+    &-elem {
+      position: relative;
+    }
+
+    &-icon {
+      width: 82px;
+      height: 40px;
+    }
+
+    &-discount {
+      position: absolute;
+      top: 50%;
+      right: 7px;
+      transform: translateY(-50%);
+      @include fluid(font-size, 16px, 20px);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1;
+    }
+  }
+
+  &__swiper {
+    padding-top: 30px;
+    margin-top: -6px;
+    padding-bottom: 48px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: -30px;
+    margin-right: -30px;
+
+    .swiper-slide {
+      transition: z-index 1s ease-in-out;
+
+      &:hover {
+        z-index: 10000;
+      }
+    }
   }
 }
 

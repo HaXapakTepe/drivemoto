@@ -1,0 +1,46 @@
+.tech {
+  &__wrapper {
+    @include fluid(margin-top, 50px, 100px);
+    @include fluid(margin-bottom, 50px, 100px);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    @include fluid(gap, 20px, 32px);
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    @include fluid(padding-top, 12px, 13px);
+    @include fluid(padding-bottom, 12px, 16px);
+    @include fluid(padding-left, 20px, 36px);
+    @include fluid(padding-right, 20px, 36px);
+    background-color: #fff;
+    border: 1px solid #BDBDBD;
+    outline: 1px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.23s ease-in-out, outline-color .23s ease-in-out;
+
+    &:hover {
+      border-color: #FAB700;
+      outline-color: #FAB700;
+    }
+
+    &-img {
+      max-width: -webkit-fit-content;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      @include fluid(height, 80px, 95px);
+    }
+
+    &-text {
+      text-align: center;
+      color: #6C6C6C;
+    }
+  }
+}

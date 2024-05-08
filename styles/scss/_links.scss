@@ -8,7 +8,19 @@
     margin-bottom: 0;
   }
 
+  &--alt {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #BDBDBD;
+
+    .links__link {
+      border-color: transparent;
+    }
+  }
+
   &__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     @include fluid(padding-top, 6px, 8px);
     @include fluid(padding-bottom, 6px, 8px);
     @include fluid(padding-left, 16px, 20px);
@@ -21,6 +33,21 @@
     &:hover,
     &--active {
       background-color: #FAB700;
+    }
+
+    &--red {
+      border-color: #F61C0D;
+      background-color: #F61C0D;
+      color: #fff;
+
+      &:hover {
+        background-color: #F61C0D;
+      }
+    }
+
+    &-icon {
+      width: 28px;
+      height: 20px;
     }
   }
 }
