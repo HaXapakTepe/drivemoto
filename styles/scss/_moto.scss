@@ -42,6 +42,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      pointer-events: none;
     }
 
     &-link {
@@ -91,6 +92,8 @@
       border-bottom: 1px solid #BDBDBD;
 
       &-title {
+        pointer-events: auto;
+
         &.accordionBot--active {
           .moto__links-icon {
             transform: rotateX(-180deg);
@@ -104,8 +107,12 @@
 
       &-link {
         &:last-child {
-          border: none;
+          border-bottom: none;
         }
+      }
+
+      .accordionBot-content {
+        max-height: 0;
       }
     }
   }

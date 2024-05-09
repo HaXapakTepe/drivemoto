@@ -984,461 +984,466 @@
                 </div>
                 <div class="filter">
                   <div class="filter__inner">
-                    <h3 class="filter__title title">
+                    <h3 class="filter__title title accordionBotFilter">
                       Фильтр
+                      <img class="filter__title-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
                     </h3>
-                    <div class="filter__item">
-                      <div class="filter__accordion accordionBot">
-                        <p class="filter__accordion-text">
-                          Розничная цена
-                        </p>
-                        <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
-                      </div>
-                      <div class="accordionBot-content">
-                        <div class="filter__item-box">
-                          <div class="range">
-                            <div class="range__box">
-                              <div class="range__box-label">
-                                <input class="range__box-input" id="lower-value" type="number" value="">
-                                <p class="range__box-text">₽</p>
+                    <div class="accordionBotFilter-content">
+                      <div class="filter__content">
+                        <div class="filter__item">
+                          <div class="filter__accordion accordionBot">
+                            <p class="filter__accordion-text">
+                              Розничная цена
+                            </p>
+                            <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
+                          </div>
+                          <div class="accordionBot-content">
+                            <div class="filter__item-box">
+                              <div class="range">
+                                <div class="range__box">
+                                  <div class="range__box-label">
+                                    <input class="range__box-input" id="lower-value" type="number" value="">
+                                    <p class="range__box-text">₽</p>
+                                  </div>
+                                  <div class="range__line">
+                                    -
+                                  </div>
+                                  <div class="range__box-label">
+                                    <input class="range__box-input" id="upper-value" type="number" value="">
+                                    <p class="range__box-text">₽</p>
+                                  </div>
+                                </div>
+                                <div class="range__item">
+                                  <div id="range"></div>
+                                </div>
                               </div>
-                              <div class="range__line">
-                                -
-                              </div>
-                              <div class="range__box-label">
-                                <input class="range__box-input" id="upper-value" type="number" value="">
-                                <p class="range__box-text">₽</p>
+                              <label class="label">
+                                <input class="label__input check" type="checkbox" />
+                                <span class="label__inputCustom"></span>
+                                Со скидкой
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filter__item">
+                          <div class="filter__accordion accordionBot">
+                            <p class="filter__accordion-text">
+                              Бренд
+                            </p>
+                            <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
+                          </div>
+                          <div class="accordionBot-content">
+                            <div class="filter__item-box">
+                              <form class="search" action="">
+                                <label class="search__label">
+                                  <button class="search__icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
+                                      <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                  </button>
+                                  <input class="search__input" type="search" placeholder="Поиск" />
+                                </label>
+                              </form>
+                              <div class="filter__item-block">
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  GAS GAS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  AVANTIS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  CFMOTO
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  HASKY
+                                </label>
                               </div>
                             </div>
-                            <div class="range__item">
-                              <div id="range"></div>
+                          </div>
+                        </div>
+                        <div class="filter__item">
+                          <div class="filter__accordion accordionBot">
+                            <p class="filter__accordion-text">
+                              Объем двигателя (cm³)
+                            </p>
+                            <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
+                          </div>
+                          <div class="accordionBot-content">
+                            <div class="filter__item-box">
+                              <form class="search" action="">
+                                <label class="search__label">
+                                  <button class="search__icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
+                                      <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                  </button>
+                                  <input class="search__input" type="search" placeholder="Поиск" />
+                                </label>
+                              </form>
+                              <div class="filter__item-block">
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  GAS GAS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  AVANTIS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  CFMOTO
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  HASKY
+                                </label>
+                              </div>
                             </div>
                           </div>
-                          <label class="label">
-                            <input class="label__input check" type="checkbox" />
-                            <span class="label__inputCustom"></span>
-                            Со скидкой
-                          </label>
                         </div>
-                      </div>
-                    </div>
-                    <div class="filter__item">
-                      <div class="filter__accordion accordionBot">
-                        <p class="filter__accordion-text">
-                          Бренд
-                        </p>
-                        <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
-                      </div>
-                      <div class="accordionBot-content">
-                        <div class="filter__item-box">
-                          <form class="search" action="">
-                            <label class="search__label">
-                              <button class="search__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
-                                  <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                              </button>
-                              <input class="search__input" type="search" placeholder="Поиск" />
-                            </label>
-                          </form>
-                          <div class="filter__item-block">
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              GAS GAS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              AVANTIS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              CFMOTO
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              HASKY
-                            </label>
+                        <div class="filter__item">
+                          <div class="filter__accordion accordionBot">
+                            <p class="filter__accordion-text">
+                              Мощность, kW
+                            </p>
+                            <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
+                          </div>
+                          <div class="accordionBot-content">
+                            <div class="filter__item-box">
+                              <form class="search" action="">
+                                <label class="search__label">
+                                  <button class="search__icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
+                                      <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                  </button>
+                                  <input class="search__input" type="search" placeholder="Поиск" />
+                                </label>
+                              </form>
+                              <div class="filter__item-block">
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  GAS GAS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  AVANTIS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  CFMOTO
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  HASKY
+                                </label>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="filter__item">
-                      <div class="filter__accordion accordionBot">
-                        <p class="filter__accordion-text">
-                          Объем двигателя (cm³)
-                        </p>
-                        <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
-                      </div>
-                      <div class="accordionBot-content">
-                        <div class="filter__item-box">
-                          <form class="search" action="">
-                            <label class="search__label">
-                              <button class="search__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
-                                  <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                              </button>
-                              <input class="search__input" type="search" placeholder="Поиск" />
-                            </label>
-                          </form>
-                          <div class="filter__item-block">
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              GAS GAS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              AVANTIS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              CFMOTO
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              HASKY
-                            </label>
+                        <div class="filter__item">
+                          <div class="filter__accordion accordionBot">
+                            <p class="filter__accordion-text">
+                              Подвеска передняя
+                            </p>
+                            <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
+                          </div>
+                          <div class="accordionBot-content">
+                            <div class="filter__item-box">
+                              <form class="search" action="">
+                                <label class="search__label">
+                                  <button class="search__icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
+                                      <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                  </button>
+                                  <input class="search__input" type="search" placeholder="Поиск" />
+                                </label>
+                              </form>
+                              <div class="filter__item-block">
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  GAS GAS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  AVANTIS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  CFMOTO
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  HASKY
+                                </label>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="filter__item">
-                      <div class="filter__accordion accordionBot">
-                        <p class="filter__accordion-text">
-                          Мощность, kW
-                        </p>
-                        <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
-                      </div>
-                      <div class="accordionBot-content">
-                        <div class="filter__item-box">
-                          <form class="search" action="">
-                            <label class="search__label">
-                              <button class="search__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
-                                  <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                              </button>
-                              <input class="search__input" type="search" placeholder="Поиск" />
-                            </label>
-                          </form>
-                          <div class="filter__item-block">
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              GAS GAS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              AVANTIS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              CFMOTO
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              HASKY
-                            </label>
+                        <div class="filter__item">
+                          <div class="filter__accordion accordionBot">
+                            <p class="filter__accordion-text">
+                              Подвеска задняя
+                            </p>
+                            <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
+                          </div>
+                          <div class="accordionBot-content">
+                            <div class="filter__item-box">
+                              <form class="search" action="">
+                                <label class="search__label">
+                                  <button class="search__icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
+                                      <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                  </button>
+                                  <input class="search__input" type="search" placeholder="Поиск" />
+                                </label>
+                              </form>
+                              <div class="filter__item-block">
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  GAS GAS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  AVANTIS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  CFMOTO
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  HASKY
+                                </label>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="filter__item">
-                      <div class="filter__accordion accordionBot">
-                        <p class="filter__accordion-text">
-                          Подвеска передняя
-                        </p>
-                        <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
-                      </div>
-                      <div class="accordionBot-content">
-                        <div class="filter__item-box">
-                          <form class="search" action="">
-                            <label class="search__label">
-                              <button class="search__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
-                                  <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                              </button>
-                              <input class="search__input" type="search" placeholder="Поиск" />
-                            </label>
-                          </form>
-                          <div class="filter__item-block">
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              GAS GAS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              AVANTIS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              CFMOTO
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              HASKY
-                            </label>
+                        <div class="filter__item">
+                          <div class="filter__accordion accordionBot">
+                            <p class="filter__accordion-text">
+                              Материал рамы
+                            </p>
+                            <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
+                          </div>
+                          <div class="accordionBot-content">
+                            <div class="filter__item-box">
+                              <form class="search" action="">
+                                <label class="search__label">
+                                  <button class="search__icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
+                                      <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                  </button>
+                                  <input class="search__input" type="search" placeholder="Поиск" />
+                                </label>
+                              </form>
+                              <div class="filter__item-block">
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  GAS GAS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  AVANTIS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  CFMOTO
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  HASKY
+                                </label>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="filter__item">
-                      <div class="filter__accordion accordionBot">
-                        <p class="filter__accordion-text">
-                          Подвеска задняя
-                        </p>
-                        <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
-                      </div>
-                      <div class="accordionBot-content">
-                        <div class="filter__item-box">
-                          <form class="search" action="">
-                            <label class="search__label">
-                              <button class="search__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
-                                  <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                              </button>
-                              <input class="search__input" type="search" placeholder="Поиск" />
-                            </label>
-                          </form>
-                          <div class="filter__item-block">
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              GAS GAS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              AVANTIS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              CFMOTO
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              HASKY
-                            </label>
+                        <div class="filter__item">
+                          <div class="filter__accordion accordionBot">
+                            <p class="filter__accordion-text">
+                              Количество тактов
+                            </p>
+                            <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
+                          </div>
+                          <div class="accordionBot-content">
+                            <div class="filter__item-box">
+                              <form class="search" action="">
+                                <label class="search__label">
+                                  <button class="search__icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
+                                      <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                  </button>
+                                  <input class="search__input" type="search" placeholder="Поиск" />
+                                </label>
+                              </form>
+                              <div class="filter__item-block">
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  GAS GAS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  AVANTIS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  CFMOTO
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  HASKY
+                                </label>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="filter__item">
-                      <div class="filter__accordion accordionBot">
-                        <p class="filter__accordion-text">
-                          Материал рамы
-                        </p>
-                        <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
-                      </div>
-                      <div class="accordionBot-content">
-                        <div class="filter__item-box">
-                          <form class="search" action="">
-                            <label class="search__label">
-                              <button class="search__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
-                                  <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                              </button>
-                              <input class="search__input" type="search" placeholder="Поиск" />
-                            </label>
-                          </form>
-                          <div class="filter__item-block">
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              GAS GAS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              AVANTIS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              CFMOTO
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              HASKY
-                            </label>
+                        <div class="filter__item">
+                          <div class="filter__accordion accordionBot">
+                            <p class="filter__accordion-text">
+                              Размер колес
+                            </p>
+                            <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
+                          </div>
+                          <div class="accordionBot-content">
+                            <div class="filter__item-box">
+                              <form class="search" action="">
+                                <label class="search__label">
+                                  <button class="search__icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
+                                      <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                  </button>
+                                  <input class="search__input" type="search" placeholder="Поиск" />
+                                </label>
+                              </form>
+                              <div class="filter__item-block">
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  GAS GAS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  AVANTIS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  CFMOTO
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  HASKY
+                                </label>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="filter__item">
-                      <div class="filter__accordion accordionBot">
-                        <p class="filter__accordion-text">
-                          Количество тактов
-                        </p>
-                        <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
-                      </div>
-                      <div class="accordionBot-content">
-                        <div class="filter__item-box">
-                          <form class="search" action="">
-                            <label class="search__label">
-                              <button class="search__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
-                                  <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                              </button>
-                              <input class="search__input" type="search" placeholder="Поиск" />
-                            </label>
-                          </form>
-                          <div class="filter__item-block">
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              GAS GAS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              AVANTIS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              CFMOTO
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              HASKY
-                            </label>
+                        <div class="filter__item">
+                          <div class="filter__accordion accordionBot">
+                            <p class="filter__accordion-text">
+                              Система запуска
+                            </p>
+                            <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
+                          </div>
+                          <div class="accordionBot-content">
+                            <div class="filter__item-box">
+                              <form class="search" action="">
+                                <label class="search__label">
+                                  <button class="search__icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
+                                      <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                  </button>
+                                  <input class="search__input" type="search" placeholder="Поиск" />
+                                </label>
+                              </form>
+                              <div class="filter__item-block">
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  GAS GAS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  AVANTIS
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  CFMOTO
+                                </label>
+                                <label class="label">
+                                  <input class="label__input check" type="checkbox" />
+                                  <span class="label__inputCustom"></span>
+                                  HASKY
+                                </label>
+                              </div>
+                            </div>
                           </div>
                         </div>
+                        <button class="btn btn--width" href="#">
+                          Показать
+                        </button>
                       </div>
                     </div>
-                    <div class="filter__item">
-                      <div class="filter__accordion accordionBot">
-                        <p class="filter__accordion-text">
-                          Размер колес
-                        </p>
-                        <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
-                      </div>
-                      <div class="accordionBot-content">
-                        <div class="filter__item-box">
-                          <form class="search" action="">
-                            <label class="search__label">
-                              <button class="search__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
-                                  <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                              </button>
-                              <input class="search__input" type="search" placeholder="Поиск" />
-                            </label>
-                          </form>
-                          <div class="filter__item-block">
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              GAS GAS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              AVANTIS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              CFMOTO
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              HASKY
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="filter__item">
-                      <div class="filter__accordion accordionBot">
-                        <p class="filter__accordion-text">
-                          Система запуска
-                        </p>
-                        <img class="filter__accordion-icon" src="./assets/images/icons/arrow-bot.svg" alt="">
-                      </div>
-                      <div class="accordionBot-content">
-                        <div class="filter__item-box">
-                          <form class="search" action="">
-                            <label class="search__label">
-                              <button class="search__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <circle cx="11" cy="11" r="7" stroke="#6C6C6C" stroke-width="2" />
-                                  <path d="M20 20L17 17" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                              </button>
-                              <input class="search__input" type="search" placeholder="Поиск" />
-                            </label>
-                          </form>
-                          <div class="filter__item-block">
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              GAS GAS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              AVANTIS
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              CFMOTO
-                            </label>
-                            <label class="label">
-                              <input class="label__input check" type="checkbox" />
-                              <span class="label__inputCustom"></span>
-                              HASKY
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="btn btn--width" href="#">
-                      Показать
-                    </button>
                   </div>
                 </div>
               </div>

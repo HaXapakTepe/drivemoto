@@ -58,7 +58,7 @@
 
 @media (max-width: 992px) {
   .menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 50%;
@@ -82,7 +82,7 @@
     &--active {
       opacity: 1;
       visibility: visible;
-      z-index: 3;
+      z-index: 15;
       transform: translateX(0%);
       transition: transform .23s ease-in-out, opacity .23s ease-in-out,
         visibility .23s ease-in-out,

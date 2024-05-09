@@ -5,6 +5,30 @@
     @include fluid(gap, 12px, 16px);
   }
 
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+
+    &-icon {
+      display: none;
+      width: 20px;
+      height: 20px;
+      transition: transform .23s ease-in-out;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include fluid(gap, 12px, 16px);
+  }
+
+  .accordionBotFilter-content {
+    max-height: unset;
+  }
+
   &__item {
     &-box {
       display: flex;
@@ -35,7 +59,7 @@
       font-weight: 500;
     }
 
-    &.accordionBot--active {
+    &.accordionBotFilter--active {
       .filter__accordion-icon {
         transform: rotateX(-180deg);
       }
@@ -45,6 +69,38 @@
       @include fluid(width, 20px, 24px);
       @include fluid(height, 20px, 24px);
       transition: transform .23s ease-in-out;
+    }
+  }
+}
+
+@media(max-width:992px) {
+  .filter {
+    &__inner {
+      border-bottom: 1px solid #BDBDBD;
+    }
+
+    &__title {
+      pointer-events: auto;
+
+      &.accordionBotFilter--active {
+        .filter__title-icon {
+          transform: rotateX(-180deg);
+        }
+
+        +.accordionBotFilter-content {
+          .filter__content {
+            margin-bottom: 12px;
+          }
+        }
+      }
+
+      &-icon {
+        display: block;
+      }
+    }
+
+    .accordionBotFilter-content {
+      max-height: 0;
     }
   }
 }

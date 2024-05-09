@@ -4,6 +4,7 @@ $(document).ready(function () {
 	const burger = document.querySelector('.burger')
 	const close = document.querySelector('.menu__close')
 	const menu = document.querySelector('.menu')
+	const range = document.getElementById('range')
 	const accordion = document.querySelectorAll('.accordion')
 	const accordionAlt = document.querySelectorAll('.accordionAlt')
 	const accordionBot = document.querySelectorAll('.accordionBot')
@@ -209,6 +210,20 @@ $(document).ready(function () {
 		'tab__info--active',
 		'tab__info--opacity'
 	)
+	const accordionBotFilter = document.querySelectorAll('.accordionBotFilter')
+	accordionBotFilter?.forEach(acc => {
+		acc.addEventListener('click', e => {
+			e.preventDefault()
+			const content = acc.nextElementSibling
+			if (acc.classList.contains('accordionBotFilter--active')) {
+				acc.classList.remove('accordionBotFilter--active')
+				content.style.maxHeight = '0'
+			} else {
+				acc.classList.add('accordionBotFilter--active')
+				content.style.maxHeight = content.scrollHeight + 'px'
+			}
+		})
+	})
 
 	accordionFooter.forEach((acc, index) => {
 		acc.addEventListener('click', e => {
@@ -239,14 +254,23 @@ $(document).ready(function () {
 	accordionBot?.forEach(acc => {
 		acc.addEventListener('click', e => {
 			e.preventDefault()
-			// const content = acc.querySelector('.accordionBot-content')
+
 			const content = acc.nextElementSibling
+			const parent = acc.closest('.accordionBotFilter-content')
+
 			if (acc.classList.contains('accordionBot--active')) {
 				acc.classList.remove('accordionBot--active')
 				content.style.maxHeight = '0'
+				if (parent) {
+					parent.style.maxHeight = parent.scrollHeight + 'px'
+				}
 			} else {
 				acc.classList.add('accordionBot--active')
 				content.style.maxHeight = content.scrollHeight + 'px'
+				if (parent) {
+					parent.style.maxHeight =
+						parent?.scrollHeight + content.scrollHeight + 'px'
+				}
 			}
 		})
 	})
@@ -271,7 +295,6 @@ $(document).ready(function () {
 		acc.addEventListener('click', e => {
 			e.preventDefault()
 			const content = acc.querySelector('.accordion__content')
-			// const content = acc.nextElementSibling
 			if (acc.classList.contains('accordion--active')) {
 				acc.classList.remove('accordion--active')
 				content.style.maxHeight = '0'
@@ -300,8 +323,6 @@ $(document).ready(function () {
 			}
 		})
 	})
-
-	const range = document.getElementById('range')
 
 	if (range) {
 		const lower = document.getElementById('lower-value')
